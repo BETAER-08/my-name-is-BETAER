@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    overflow: hidden;
+}
+.container {
+    width: 200%;
+    height: 100vh;
+    display: flex;
+    position: relative;
+    transition: transform 0.5s;
+}
+
+.slide {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    background: no-repeat center center fixed;
+    background-size: cover;
+}
+
+#nextButton {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #3498db;
+    padding: 0;
+    line-height: 1;
+    z-index: 2;
+    transition: transform 0.2s, color 0.2s;
+}
+
+#nextButton.hidden {
+    display: none;
+}
+
+#nextButton:hover {
+    transform: scale(1.2);
+    color: #e74c3c;
+}
+
+/* 첫 번째 슬라이드 글꼴 크기 조절 */
+.first-slide-title {
+    font-size: 36px; /* 원하는 글꼴 크기로 조절 */
+}
+
+/* 첫 번째 슬라이드에서 텍스트 우측에 배치 */
+.slide:nth-child(1) h1, .slide:nth-child(1) p {
+    text-align: left;
+    margin-left: 20px; /* 여유 공간 추가 */
+}
+
+/* "제 소개" 슬라이드에서 텍스트 중앙에 배치 */
+.slide:nth-child(2) h1, .slide:nth-child(2) p {
+    text-align: center;
+}
+
+
+/* 첫 번째 화면 배경 이미지 설정 */
+.slide:nth-child(1) {
+    background-image: url('first-slide-background.png');
+    background-size: cover;
+    background-position: center;
+    font-size: 40px;
+}
+
+/* "제 소개" 슬라이드 배경 이미지 설정 */
+.slide:nth-child(2) {
+    background-image: url('intro-slide-background.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+
+
